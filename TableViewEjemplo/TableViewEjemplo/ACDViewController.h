@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ACDViewController : UIViewController
-
+@interface ACDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+    @property (weak, nonatomic) IBOutlet UITableView *_tableView;
 @end

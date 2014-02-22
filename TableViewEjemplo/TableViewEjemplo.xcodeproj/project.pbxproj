@@ -21,6 +21,7 @@
 		18D293A918B912C8000AC9BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D2938B18B912C8000AC9BC /* UIKit.framework */; };
 		18D293B118B912C8000AC9BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18D293AF18B912C8000AC9BC /* InfoPlist.strings */; };
 		18D293B318B912C8000AC9BC /* TableViewEjemploTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D293B218B912C8000AC9BC /* TableViewEjemploTests.m */; };
+		18D293BE18B92246000AC9BC /* ACDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D293BD18B92246000AC9BC /* ACDDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		18D293AE18B912C8000AC9BC /* TableViewEjemploTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableViewEjemploTests-Info.plist"; sourceTree = "<group>"; };
 		18D293B018B912C8000AC9BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18D293B218B912C8000AC9BC /* TableViewEjemploTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewEjemploTests.m; sourceTree = "<group>"; };
+		18D293BC18B92246000AC9BC /* ACDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDDetailViewController.h; sourceTree = "<group>"; };
+		18D293BD18B92246000AC9BC /* ACDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				18D2939D18B912C8000AC9BC /* ACDViewController.m */,
 				18D2939F18B912C8000AC9BC /* Images.xcassets */,
 				18D2938E18B912C8000AC9BC /* Supporting Files */,
+				18D293BC18B92246000AC9BC /* ACDDetailViewController.h */,
+				18D293BD18B92246000AC9BC /* ACDDetailViewController.m */,
 			);
 			path = TableViewEjemplo;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				18D2939418B912C8000AC9BC /* main.m in Sources */,
 				18D2939818B912C8000AC9BC /* ACDAppDelegate.m in Sources */,
+				18D293BE18B92246000AC9BC /* ACDDetailViewController.m in Sources */,
 				18D2939E18B912C8000AC9BC /* ACDViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
