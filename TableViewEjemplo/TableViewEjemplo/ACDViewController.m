@@ -7,10 +7,11 @@
 //
 
 #import "ACDViewController.h"
+#import "ACDDetailViewController.h"
 
 @interface ACDViewController ()
 {
-    NSArray *datos;
+    NSMutableArray *datos;
 }
 @end
 
@@ -20,8 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    datos = @[@"España", @"Portugal", @"Francia", @"Inglaterra", @"Alemania"];
+    
+    datos = [NSMutableArray arrayWithObjects:@"España", @"Portugal", @"Francia", @"Inglaterra", @"Alemania", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,5 +44,14 @@
     cell.textLabel.text = datos[indexPath.row];
     
     return cell;
+}
+    
+#pragma mark - Segues
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"PushSegue"]) {
+        ACDDetailViewController *destination = [segue destinationViewController];
+        NSIndexPath *indexPath = [self._tableView indexPathForSelectedRow];
+        destination.pais = datos[indexPath.row];
+    }
 }
 @end

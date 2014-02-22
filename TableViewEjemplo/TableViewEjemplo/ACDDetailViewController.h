@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ACDDetailViewController : UIViewController
-
+    @property (weak, nonatomic) IBOutlet UILabel *lblPais;
+    @property(nonatomic) NSString *pais;
 @end

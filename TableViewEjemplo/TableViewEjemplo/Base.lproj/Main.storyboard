@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="CUY-2y-P1S">
             <objects>
-                <viewController id="pzA-gE-yF1" sceneMemberID="viewController">
+                <viewController id="pzA-gE-yF1" customClass="ACDDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OML-L3-Z5O"/>
                         <viewControllerLayoutGuide type="bottom" id="Zfe-w3-OYF"/>
@@ -34,10 +34,56 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qb3-Uk-wKH"/>
+                    <connections>
+                        <outlet property="lblPais" destination="G72-5z-p4C" id="y0d-wq-jn3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzw-t2-KEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-129" y="749"/>
+        </scene>
+        <!--Agregar Pais View Controller - Agregar Pais-->
+        <scene sceneID="ppC-Hq-5Zm">
+            <objects>
+                <tableViewController id="DkI-iF-TGe" customClass="ACDAgregarPaisViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NRC-aq-T1s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Da4-Uv-K35">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Da4-Uv-K35" id="CuG-YD-Jez">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Agregar Pais" id="FOl-s2-y5P">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Cun-Kj-Bgt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GBe-Tz-3ks"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KeL-pm-A8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317" y="743"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wCU-Ns-emC">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="a4g-jX-Rsa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8hz-yE-ZgT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DkI-iF-TGe" kind="relationship" relationship="rootViewController" id="nmb-Tp-izW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9BL-SZ-ya9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="743"/>
         </scene>
         <!--View Controller - Países de Europa-->
         <scene sceneID="ufC-wZ-h7g">
@@ -73,7 +119,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="pzA-gE-yF1" kind="push" id="gVR-SD-N4E"/>
+                                            <segue destination="pzA-gE-yF1" kind="push" identifier="PushSegue" id="gVR-SD-N4E"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -86,7 +132,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Países de Europa" id="lKi-nq-Bt9"/>
+                    <navigationItem key="navigationItem" title="Países de Europa" id="lKi-nq-Bt9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cr0-Y2-s7u">
+                            <connections>
+                                <segue destination="a4g-jX-Rsa" kind="modal" identifier="AgregarPaisSegue" id="QDQ-w4-gqU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="_tableView" destination="9Kj-Me-FXD" id="OEF-rx-tk5"/>
                     </connections>
