@@ -26,6 +26,12 @@
     datos = [NSMutableArray arrayWithObjects:@"España", @"Portugal", @"Francia", @"Inglaterra", @"Alemania", nil];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"description" ascending:YES];
+    datos = [[datos sortedArrayUsingDescriptors:@[descriptor]] mutableCopy];
+    [self._tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -47,6 +53,11 @@
     return cell;
 }
     
+    
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+    
 #pragma mark - Segues
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"PushSegue"]) {
@@ -63,6 +74,6 @@
 #pragma mark - Agregar Pais
 -(void)GuardarPaisConNombre:(NSString *)pais {
     [datos addObject:pais];
-    [self._tableView reloadData];
+    //[self._tableView reloadData];
 }
 @end
