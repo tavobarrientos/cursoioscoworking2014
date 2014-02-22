@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ACDAgregarPaisDelegate.h"
 
-@interface ACDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ACDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ACDAgregarPaisDelegate>
     @property (weak, nonatomic) IBOutlet UITableView *_tableView;
 @end

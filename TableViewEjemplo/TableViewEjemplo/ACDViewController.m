@@ -8,6 +8,7 @@
 
 #import "ACDViewController.h"
 #import "ACDDetailViewController.h"
+#import "ACDAgregarPaisViewController.h"
 
 @interface ACDViewController ()
 {
@@ -52,6 +53,16 @@
         ACDDetailViewController *destination = [segue destinationViewController];
         NSIndexPath *indexPath = [self._tableView indexPathForSelectedRow];
         destination.pais = datos[indexPath.row];
+    } else if ([segue.identifier isEqualToString:@"AgregarPaisSegue"]) {
+        UINavigationController *nav = [segue destinationViewController];
+        ACDAgregarPaisViewController *destination = nav.childViewControllers[0];
+        destination.delegate = self;
     }
+}
+    
+#pragma mark - Agregar Pais
+-(void)GuardarPaisConNombre:(NSString *)pais {
+    [datos addObject:pais];
+    [self._tableView reloadData];
 }
 @end

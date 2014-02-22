@@ -23,6 +23,7 @@
 		18D293B318B912C8000AC9BC /* TableViewEjemploTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D293B218B912C8000AC9BC /* TableViewEjemploTests.m */; };
 		18D293BE18B92246000AC9BC /* ACDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D293BD18B92246000AC9BC /* ACDDetailViewController.m */; };
 		18D293C118B92FF0000AC9BC /* ACDAgregarPaisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D293C018B92FF0000AC9BC /* ACDAgregarPaisViewController.m */; };
+		18D293C318B93391000AC9BC /* ACDAgregarPaisDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 18D293C218B93381000AC9BC /* ACDAgregarPaisDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		18D293BD18B92246000AC9BC /* ACDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDDetailViewController.m; sourceTree = "<group>"; };
 		18D293BF18B92FF0000AC9BC /* ACDAgregarPaisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDAgregarPaisViewController.h; sourceTree = "<group>"; };
 		18D293C018B92FF0000AC9BC /* ACDAgregarPaisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDAgregarPaisViewController.m; sourceTree = "<group>"; };
+		18D293C218B93381000AC9BC /* ACDAgregarPaisDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACDAgregarPaisDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				18D293BD18B92246000AC9BC /* ACDDetailViewController.m */,
 				18D293BF18B92FF0000AC9BC /* ACDAgregarPaisViewController.h */,
 				18D293C018B92FF0000AC9BC /* ACDAgregarPaisViewController.m */,
+				18D293C218B93381000AC9BC /* ACDAgregarPaisDelegate.h */,
 			);
 			path = TableViewEjemplo;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D293C318B93391000AC9BC /* ACDAgregarPaisDelegate.h in Sources */,
 				18D2939418B912C8000AC9BC /* main.m in Sources */,
 				18D2939818B912C8000AC9BC /* ACDAppDelegate.m in Sources */,
 				18D293C118B92FF0000AC9BC /* ACDAgregarPaisViewController.m in Sources */,

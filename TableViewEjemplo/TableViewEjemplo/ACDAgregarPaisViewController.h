@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ACDAgregarPaisViewController : UITableViewController
+#import "ACDAgregarPaisDelegate.h"
 
+@interface ACDAgregarPaisViewController : UITableViewController
+- (IBAction)btnCancelAction:(id)sender;
+- (IBAction)btnSaveAction:(id)sender;
+    @property (weak, nonatomic) IBOutlet UITextField *txtNombrePais;
+
+    @property(nonatomic, strong) id<ACDAgregarPaisDelegate> delegate;
 @end
