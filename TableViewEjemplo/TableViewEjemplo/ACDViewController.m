@@ -13,6 +13,8 @@
 @interface ACDViewController ()
 {
     NSMutableArray *datos;
+    NSArray *continentes;
+    
 }
 @end
 
@@ -23,13 +25,18 @@
 {
     [super viewDidLoad];
     
-    datos = [NSMutableArray arrayWithObjects:@"España", @"Portugal", @"Francia", @"Inglaterra", @"Alemania", nil];
+    NSMutableArray *america = [NSMutableArray arrayWithObjects:@"México", @"Estados Unidos", @"Canada", nil];
+    NSMutableArray *europa = [NSMutableArray arrayWithObjects:@"Alemania", @"España", @"Portugal", @"Francia", nil];
+    NSMutableArray *asia = [NSMutableArray arrayWithObjects:@"Japón", @"China", @"Corea del Sur", nil];
+    
+    datos = [NSMutableArray arrayWithObjects:america, europa, asia, nil];
+    continentes = @[@"America", @"Europa", @"Asia"];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"description" ascending:YES];
-    datos = [[datos sortedArrayUsingDescriptors:@[descriptor]] mutableCopy];
-    [self._tableView reloadData];
+    //NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"description" ascending:YES];
+    //datos = [[datos sortedArrayUsingDescriptors:@[descriptor]] mutableCopy];
+    //[self._tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,8 +46,17 @@
 }
 
 #pragma mark - Datasource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return continentes.count;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return datos.count;
+    return [datos[section] count];
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *title = continentes[section];
+    return [NSString stringWithFormat:@"Países de %@", title];
 }
     
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,7 +64,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     //NSString *pais = datos[indexPath.row];
-    cell.textLabel.text = datos[indexPath.row];
+    cell.textLabel.text = datos[indexPath.section][indexPath.row];
     
     return cell;
 }
@@ -63,17 +79,19 @@
     if([segue.identifier isEqualToString:@"PushSegue"]) {
         ACDDetailViewController *destination = [segue destinationViewController];
         NSIndexPath *indexPath = [self._tableView indexPathForSelectedRow];
-        destination.pais = datos[indexPath.row];
+        destination.pais = datos[indexPath.section][indexPath.row];
     } else if ([segue.identifier isEqualToString:@"AgregarPaisSegue"]) {
         UINavigationController *nav = [segue destinationViewController];
         ACDAgregarPaisViewController *destination = nav.childViewControllers[0];
         destination.delegate = self;
+        destination.continentes = continentes;
     }
 }
     
 #pragma mark - Agregar Pais
--(void)GuardarPaisConNombre:(NSString *)pais {
-    [datos addObject:pais];
-    //[self._tableView reloadData];
+-(void)GuardarPaisConNombre:(NSString *)pais yContinente:(NSInteger)index {
+    [datos[index] addObject:pais];
+    //[datos addObject:pais];
+    [self._tableView reloadData];
 }
 @end

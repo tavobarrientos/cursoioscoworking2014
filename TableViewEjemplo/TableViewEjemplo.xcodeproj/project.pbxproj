@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1895B47518C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895B47418C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m */; };
 		18D2938818B912C8000AC9BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D2938718B912C8000AC9BC /* Foundation.framework */; };
 		18D2938A18B912C8000AC9BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D2938918B912C8000AC9BC /* CoreGraphics.framework */; };
 		18D2938C18B912C8000AC9BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D2938B18B912C8000AC9BC /* UIKit.framework */; };
@@ -24,6 +25,7 @@
 		18D293BE18B92246000AC9BC /* ACDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D293BD18B92246000AC9BC /* ACDDetailViewController.m */; };
 		18D293C118B92FF0000AC9BC /* ACDAgregarPaisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D293C018B92FF0000AC9BC /* ACDAgregarPaisViewController.m */; };
 		18D293C318B93391000AC9BC /* ACDAgregarPaisDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 18D293C218B93381000AC9BC /* ACDAgregarPaisDelegate.h */; };
+		D3774AEF02774C0FA81DD072 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C086A2E6304FD599B24086 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1895B47218C254690016FBC9 /* ACDAgregarContinenteDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACDAgregarContinenteDelegate.h; sourceTree = "<group>"; };
+		1895B47318C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDSeleccionarContinenteViewController.h; sourceTree = "<group>"; };
+		1895B47418C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDSeleccionarContinenteViewController.m; sourceTree = "<group>"; };
 		18D2938418B912C8000AC9BC /* TableViewEjemplo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewEjemplo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2938718B912C8000AC9BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18D2938918B912C8000AC9BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +66,8 @@
 		18D293BF18B92FF0000AC9BC /* ACDAgregarPaisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDAgregarPaisViewController.h; sourceTree = "<group>"; };
 		18D293C018B92FF0000AC9BC /* ACDAgregarPaisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDAgregarPaisViewController.m; sourceTree = "<group>"; };
 		18D293C218B93381000AC9BC /* ACDAgregarPaisDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACDAgregarPaisDelegate.h; sourceTree = "<group>"; };
+		99C086A2E6304FD599B24086 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE6C085EBE674B738F2DF35C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +78,7 @@
 				18D2938A18B912C8000AC9BC /* CoreGraphics.framework in Frameworks */,
 				18D2938C18B912C8000AC9BC /* UIKit.framework in Frameworks */,
 				18D2938818B912C8000AC9BC /* Foundation.framework in Frameworks */,
+				D3774AEF02774C0FA81DD072 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +102,7 @@
 				18D293AC18B912C8000AC9BC /* TableViewEjemploTests */,
 				18D2938618B912C8000AC9BC /* Frameworks */,
 				18D2938518B912C8000AC9BC /* Products */,
+				DE6C085EBE674B738F2DF35C /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +122,7 @@
 				18D2938918B912C8000AC9BC /* CoreGraphics.framework */,
 				18D2938B18B912C8000AC9BC /* UIKit.framework */,
 				18D293A618B912C8000AC9BC /* XCTest.framework */,
+				99C086A2E6304FD599B24086 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,6 +142,9 @@
 				18D293BF18B92FF0000AC9BC /* ACDAgregarPaisViewController.h */,
 				18D293C018B92FF0000AC9BC /* ACDAgregarPaisViewController.m */,
 				18D293C218B93381000AC9BC /* ACDAgregarPaisDelegate.h */,
+				1895B47218C254690016FBC9 /* ACDAgregarContinenteDelegate.h */,
+				1895B47318C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.h */,
+				1895B47418C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m */,
 			);
 			path = TableViewEjemplo;
 			sourceTree = "<group>";
@@ -172,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18D293B618B912C8000AC9BC /* Build configuration list for PBXNativeTarget "TableViewEjemplo" */;
 			buildPhases = (
+				1DBFA688F3884EAA9B003D16 /* Check Pods Manifest.lock */,
 				18D2938018B912C8000AC9BC /* Sources */,
 				18D2938118B912C8000AC9BC /* Frameworks */,
 				18D2938218B912C8000AC9BC /* Resources */,
+				F4029B0180B24784A8DFF8EF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +273,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DBFA688F3884EAA9B003D16 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F4029B0180B24784A8DFF8EF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18D2938018B912C8000AC9BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -266,6 +314,7 @@
 				18D293C318B93391000AC9BC /* ACDAgregarPaisDelegate.h in Sources */,
 				18D2939418B912C8000AC9BC /* main.m in Sources */,
 				18D2939818B912C8000AC9BC /* ACDAppDelegate.m in Sources */,
+				1895B47518C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m in Sources */,
 				18D293C118B92FF0000AC9BC /* ACDAgregarPaisViewController.m in Sources */,
 				18D293BE18B92246000AC9BC /* ACDDetailViewController.m in Sources */,
 				18D2939E18B912C8000AC9BC /* ACDViewController.m in Sources */,
@@ -392,6 +441,7 @@
 		};
 		18D293B718B912C8000AC9BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE6C085EBE674B738F2DF35C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -405,6 +455,7 @@
 		};
 		18D293B818B912C8000AC9BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE6C085EBE674B738F2DF35C /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -477,6 +528,7 @@
 				18D293B818B912C8000AC9BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18D293B918B912C8000AC9BC /* Build configuration list for PBXNativeTarget "TableViewEjemploTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +537,7 @@
 				18D293BB18B912C8000AC9BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

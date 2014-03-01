@@ -7,9 +7,11 @@
 //
 
 #import "ACDAgregarPaisViewController.h"
+#import "ACDSeleccionarContinenteViewController.h"
 
-@interface ACDAgregarPaisViewController ()
-
+@interface ACDAgregarPaisViewController (){
+    NSInteger continenteIndex;
+}
 @end
 
 @implementation ACDAgregarPaisViewController
@@ -26,12 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +42,25 @@
 }
     
 - (IBAction)btnSaveAction:(id)sender {
-    [self.delegate GuardarPaisConNombre:self.txtNombrePais.text];
+    [self.delegate GuardarPaisConNombre:self.txtNombrePais.text yContinente:continenteIndex];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Agregar Continente Delegate
+-(void)SetContinenteWithIndex:(NSInteger)index {
+    continenteIndex = index;
+    self.lblContinenteName.text = self.continentes[index];
+}
+
+-(NSArray*)getContinentesArray {
+    return self.continentes;
+}
+
+#pragma mark - Segues
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"MostrarContinentes"]) {
+        ACDSeleccionarContinenteViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
+    }
 }
 @end

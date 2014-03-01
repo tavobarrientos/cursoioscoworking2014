@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol ACDAgregarPaisDelegate <NSObject>
-    -(void)GuardarPaisConNombre:(NSString*)pais;
+-(void)GuardarPaisConNombre:(NSString*)pais yContinente:(NSInteger)index;
 @end
