@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1895B47518C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895B47418C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m */; };
+		1895B47718C2614B0016FBC9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895B47618C2614B0016FBC9 /* CoreData.framework */; };
+		1895B47A18C2623E0016FBC9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1895B47818C2623E0016FBC9 /* Model.xcdatamodeld */; };
+		1895B47D18C268A50016FBC9 /* Continente.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895B47C18C268A50016FBC9 /* Continente.m */; };
+		1895B48018C268A50016FBC9 /* Pais.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895B47F18C268A50016FBC9 /* Pais.m */; };
 		18D2938818B912C8000AC9BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D2938718B912C8000AC9BC /* Foundation.framework */; };
 		18D2938A18B912C8000AC9BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D2938918B912C8000AC9BC /* CoreGraphics.framework */; };
 		18D2938C18B912C8000AC9BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D2938B18B912C8000AC9BC /* UIKit.framework */; };
@@ -42,6 +46,12 @@
 		1895B47218C254690016FBC9 /* ACDAgregarContinenteDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACDAgregarContinenteDelegate.h; sourceTree = "<group>"; };
 		1895B47318C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACDSeleccionarContinenteViewController.h; sourceTree = "<group>"; };
 		1895B47418C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACDSeleccionarContinenteViewController.m; sourceTree = "<group>"; };
+		1895B47618C2614B0016FBC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1895B47918C2623E0016FBC9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1895B47B18C268A50016FBC9 /* Continente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Continente.h; sourceTree = "<group>"; };
+		1895B47C18C268A50016FBC9 /* Continente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Continente.m; sourceTree = "<group>"; };
+		1895B47E18C268A50016FBC9 /* Pais.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pais.h; sourceTree = "<group>"; };
+		1895B47F18C268A50016FBC9 /* Pais.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pais.m; sourceTree = "<group>"; };
 		18D2938418B912C8000AC9BC /* TableViewEjemplo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewEjemplo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2938718B912C8000AC9BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18D2938918B912C8000AC9BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1895B47718C2614B0016FBC9 /* CoreData.framework in Frameworks */,
 				18D2938A18B912C8000AC9BC /* CoreGraphics.framework in Frameworks */,
 				18D2938C18B912C8000AC9BC /* UIKit.framework in Frameworks */,
 				18D2938818B912C8000AC9BC /* Foundation.framework in Frameworks */,
@@ -118,6 +129,7 @@
 		18D2938618B912C8000AC9BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1895B47618C2614B0016FBC9 /* CoreData.framework */,
 				18D2938718B912C8000AC9BC /* Foundation.framework */,
 				18D2938918B912C8000AC9BC /* CoreGraphics.framework */,
 				18D2938B18B912C8000AC9BC /* UIKit.framework */,
@@ -145,6 +157,11 @@
 				1895B47218C254690016FBC9 /* ACDAgregarContinenteDelegate.h */,
 				1895B47318C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.h */,
 				1895B47418C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m */,
+				1895B47818C2623E0016FBC9 /* Model.xcdatamodeld */,
+				1895B47E18C268A50016FBC9 /* Pais.h */,
+				1895B47F18C268A50016FBC9 /* Pais.m */,
+				1895B47B18C268A50016FBC9 /* Continente.h */,
+				1895B47C18C268A50016FBC9 /* Continente.m */,
 			);
 			path = TableViewEjemplo;
 			sourceTree = "<group>";
@@ -311,9 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1895B48018C268A50016FBC9 /* Pais.m in Sources */,
+				1895B47D18C268A50016FBC9 /* Continente.m in Sources */,
 				18D293C318B93391000AC9BC /* ACDAgregarPaisDelegate.h in Sources */,
 				18D2939418B912C8000AC9BC /* main.m in Sources */,
 				18D2939818B912C8000AC9BC /* ACDAppDelegate.m in Sources */,
+				1895B47A18C2623E0016FBC9 /* Model.xcdatamodeld in Sources */,
 				1895B47518C256FC0016FBC9 /* ACDSeleccionarContinenteViewController.m in Sources */,
 				18D293C118B92FF0000AC9BC /* ACDAgregarPaisViewController.m in Sources */,
 				18D293BE18B92246000AC9BC /* ACDDetailViewController.m in Sources */,
@@ -540,6 +560,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1895B47818C2623E0016FBC9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1895B47918C2623E0016FBC9 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1895B47918C2623E0016FBC9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18D2937C18B912C8000AC9BC /* Project object */;
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Continente" representedClassName="Continente" syncable="YES">
+        <attribute name="nombre" attributeType="String" minValueString="1" maxValueString="100" syncable="YES"/>
+        <relationship name="continente_pais" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Pais" inverseName="pais_continente" inverseEntity="Pais" syncable="YES"/>
+    </entity>
+    <entity name="Pais" representedClassName="Pais" syncable="YES">
+        <attribute name="nombre" attributeType="String" minValueString="1" maxValueString="100" syncable="YES"/>
+        <relationship name="pais_continente" maxCount="1" deletionRule="Nullify" destinationEntity="Continente" inverseName="continente_pais" inverseEntity="Continente" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Continente" positionX="-1188" positionY="-1567" width="128" height="73"/>
+        <element name="Pais" positionX="-956" positionY="-1638" width="128" height="73"/>
+    </elements>
+</model>

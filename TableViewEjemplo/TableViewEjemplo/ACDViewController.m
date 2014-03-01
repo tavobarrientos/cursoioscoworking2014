@@ -9,6 +9,7 @@
 #import "ACDViewController.h"
 #import "ACDDetailViewController.h"
 #import "ACDAgregarPaisViewController.h"
+#import "ACDAppDelegate.h"
 
 @interface ACDViewController ()
 {
@@ -31,6 +32,8 @@
     
     datos = [NSMutableArray arrayWithObjects:america, europa, asia, nil];
     continentes = @[@"America", @"Europa", @"Asia"];
+    
+    _managedObjectContext = [(ACDAppDelegate *)[UIApplication sharedApplication].delegate managedObjectContext];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -47,24 +50,27 @@
 
 #pragma mark - Datasource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return continentes.count;
+    NSInteger sections = [_fetchedResults sections].count;
+    return sections;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [datos[section] count];
+    NSInteger rows = [[_fetchedResults sections][section] count];
+    return rows;
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSString *title = continentes[section];
+    
     return [NSString stringWithFormat:@"Países de %@", title];
 }
     
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = @"PaisCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    NSManagedObject *managedObject = [_fetchedResults objectAtIndexPath:indexPath];
     
-    //NSString *pais = datos[indexPath.row];
-    cell.textLabel.text = datos[indexPath.section][indexPath.row];
+    cell.textLabel.text = [managedObject valueForKey:@"nombre"];
     
     return cell;
 }
@@ -93,5 +99,35 @@
     [datos[index] addObject:pais];
     //[datos addObject:pais];
     [self._tableView reloadData];
+}
+
+#pragma mark - Fetched Results Controller
+#pragma mark - Fetched Results
+-(NSFetchedResultsController *)fetchedResults {
+    if(_fetchedResults)
+    {
+        return _fetchedResults;
+    }
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Continentes" inManagedObjectContext:_managedObjectContext];
+    /*NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:kDateAdded ascending:YES];
+    [request setSortDescriptors:@[descriptor]];*/
+    [request setEntity:description];
+    
+    
+    NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                                 managedObjectContext:_managedObjectContext
+                                                                                   sectionNameKeyPath:nil
+                                                                                            cacheName:@"ContinentesMAster"];
+    controller.delegate = self;
+    _fetchedResults = controller;
+    NSError *error = nil;
+    
+    if (![_fetchedResults performFetch:&error]) {
+        abort();
+    }
+    
+    return _fetchedResults;
 }
 @end

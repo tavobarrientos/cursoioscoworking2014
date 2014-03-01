@@ -10,6 +10,8 @@
 
 @implementation ACDAppDelegate
 
+@synthesize managedObjectContext = _managedObjectContext, managedObjectModel = _managedObjectModel, persistentStoreCoodinator = _persistentStoreCoodinator;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -41,6 +43,77 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Eventos de Core Data
+-(NSURL *)applicationDocumentsDirectory
+{
+    return [[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].lastObject;
+}
+
+// Objetos de Core Data
+-(NSManagedObjectContext *)managedObjectContext
+{
+    if(_managedObjectContext) {
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    
+    if(coordinator) {
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        _managedObjectContext.persistentStoreCoordinator = coordinator;
+    }
+    
+    return _managedObjectContext;
+}
+
+/**/
+-(NSManagedObjectModel *) managedObjectModel
+{
+    if(_managedObjectModel) {
+        return _managedObjectModel;
+    }
+    
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
+    return _managedObjectModel;
+}
+
+-(NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if(_persistentStoreCoodinator) {
+        return _persistentStoreCoodinator;
+    }
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Model.CDBStore"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if(![fileManager fileExistsAtPath:[storeURL path]])
+    {
+        NSURL *defaultStoreURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"CDBStore"];
+        
+        if(defaultStoreURL)
+            [fileManager copyItemAtURL:defaultStoreURL toURL:storeURL error:NULL];
+    }
+    
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES],
+                             NSMigratePersistentStoresAutomaticallyOption,
+                             [NSNumber numberWithBool:YES],
+                             NSInferMappingModelAutomaticallyOption, nil];
+    
+    _persistentStoreCoodinator = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:[self managedObjectModel]];
+    
+    NSError *error;
+    
+    if(![_persistentStoreCoodinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+        NSLog(@"Error: %@, %@ ", error, [error userInfo]);
+    }
+    
+    return _persistentStoreCoodinator;
 }
 
 @end

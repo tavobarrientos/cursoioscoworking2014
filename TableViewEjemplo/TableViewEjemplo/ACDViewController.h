@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "ACDAgregarPaisDelegate.h"
 
-@interface ACDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ACDAgregarPaisDelegate>
-    @property (weak, nonatomic) IBOutlet UITableView *_tableView;
+@interface ACDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ACDAgregarPaisDelegate, NSFetchedResultsControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *_tableView;
+
+@property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property(nonatomic, strong) NSFetchedResultsController *fetchedResults;
 @end
