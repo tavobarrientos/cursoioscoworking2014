@@ -205,6 +205,7 @@
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@, %@", apellido, nombre];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Edad: %@", edad];
+    //cell.imageView.image = [UIImage imageNamed:@""];
 }
 
 #pragma mark - Agregar Alumno Delegate
